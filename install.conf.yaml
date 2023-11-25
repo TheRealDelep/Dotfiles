@@ -6,6 +6,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [./fix-nvim-install.sh]
 
 - create:
     - ~/repos  
