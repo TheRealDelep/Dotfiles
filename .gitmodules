@@ -4,3 +4,9 @@
 [submodule "oh-my-bash"]
 	path = oh-my-bash
 	url = https://github.com/ohmybash/oh-my-bash
+[submodule "fzf"]
+	path = fzf
+	url = https://github.com/junegunn/fzf
+[submodule "neovim"]
+	path = neovim
+	url = https://github.com/neovim/neovim
