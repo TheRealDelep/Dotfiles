@@ -4,9 +4,14 @@
 
 - clean: ['~']
 
-- link:
-    ~/.bashrc: bashrc 
-
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+
+- create:
+    - ~/repos  
+    - ~/projekt  
+    - ~/playground  
+
+- link:
+    ~/.bashrc: bashrc 
 
