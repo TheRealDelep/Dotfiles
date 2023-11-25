@@ -254,3 +254,5 @@ source "$OSH"/oh-my-bash.sh
 
 source "$HOME/.dotfiles/fzf/shell/completion.bash"
 source "$HOME/.dotfiles/fzf/shell/key-bindings.bash"
+
+export XDG_CONFIG_HOME="$HOME/.dotfiles"
