@@ -1,4 +1,3 @@
-require('config')
 
 local opt = vim.opt
 opt.nu = true
@@ -18,10 +17,9 @@ opt.signcolumn = 'yes'
 opt.isfname:append('@-@')
 
 opt.updatetime = 50
-vim.g.mapleader = ' '
 vim.opt.fillchars = { eob = ' ' }
 
-vim.cmd('colorscheme rose-pine')
+require('config')
 --vim.cmd('SymbolsOutline')
 
 opt.termguicolors = true
