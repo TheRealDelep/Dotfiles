@@ -1,3 +1,9 @@
+local normal = { fg = 'text' }
+local func = { fg = 'iris' }
+local literal = { fg = 'rose' }
+local keyword = { fg = 'pine' }
+local type = { fg = 'foam' }
+
 require('rose-pine').setup({
     variant = 'auto',
     dark_variant = 'main',
@@ -8,8 +14,31 @@ require('rose-pine').setup({
     disable_italics = true,
 
     highlight_groups = {
-        ['@field'] = { link = '@variable'},
-        ['@property'] = { link = '@variable'},
+        ['Normal'] = normal,
+        ['Operator'] = normal,
+        ['Function'] = func,
+        ['String'] = literal,
+        ['Number'] = literal,
+        ['Float'] = literal,
+        ['Keyword'] = keyword,
+        ['Type'] = type,
+        ['Structure'] = type,
+        ['Include'] = {link = 'keyword'},
+
+        ['@variable'] = {link = 'Normal'},
+        ['@parameter'] = {link = '@variable'},
+        ['@field'] = {link = '@variable'},
+        ['@property'] = {link = '@field'},
+
+        ['@method'] = {link = 'Function'},
+
+        -- csharp specific
+        ['@variable.c_sharp'] = {link = '@variable'},
+        ['@type.qualifier.c_sharp'] = {link = 'Keyword'},
+        ['@type.builtin.c_sharp'] = {link = 'Keyword'},
+        ['@storageclass.c_sharp'] = {link = 'Keyword'},
+        ['@punctuation.delimiter.c_sharp'] = {link = 'Normal'},
+        ['@punctuation.bracket.c_sharp'] = {link = 'Normal'},
     }
 })
 
