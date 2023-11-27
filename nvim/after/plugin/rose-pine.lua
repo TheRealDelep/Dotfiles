@@ -16,6 +16,7 @@ require('rose-pine').setup({
     highlight_groups = {
         ['Normal'] = normal,
         ['Operator'] = normal,
+        ['Constant'] = normal,
         ['Function'] = func,
         ['String'] = literal,
         ['Number'] = literal,
@@ -25,12 +26,14 @@ require('rose-pine').setup({
         ['Structure'] = type,
         ['Include'] = {link = 'keyword'},
 
+        -- Treesitter 
         ['@variable'] = {link = 'Normal'},
         ['@parameter'] = {link = '@variable'},
         ['@field'] = {link = '@variable'},
         ['@property'] = {link = '@field'},
 
         ['@method'] = {link = 'Function'},
+        ['@function.builtin'] = {link = 'Function'},
 
         -- csharp specific
         ['@variable.c_sharp'] = {link = '@variable'},
@@ -39,6 +42,13 @@ require('rose-pine').setup({
         ['@storageclass.c_sharp'] = {link = 'Keyword'},
         ['@punctuation.delimiter.c_sharp'] = {link = 'Normal'},
         ['@punctuation.bracket.c_sharp'] = {link = 'Normal'},
+
+        -- zig specific
+        ['@lsp.type.namespace.zig'] = {link = '@viarable'},
+        ['@variable.builtin.zig'] = {link = '@variable'},
+        ['@constant.builtin.zig'] = {link = '@variable'},
+        ['@lsp.type.keywordliteral.zig'] = {link = 'Keyword'},
+
     }
 })
 

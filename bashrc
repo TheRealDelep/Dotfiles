@@ -256,3 +256,6 @@ source "$HOME/.dotfiles/fzf/shell/completion.bash"
 source "$HOME/.dotfiles/fzf/shell/key-bindings.bash"
 
 export XDG_CONFIG_HOME="$HOME/.dotfiles"
+export CXX=clang++-17
+export PATH=$PATH:"$HOME/repos/zig/build/bin"
+export PATH=$PATH:"$HOME/repos/zls/zig-out/bin"

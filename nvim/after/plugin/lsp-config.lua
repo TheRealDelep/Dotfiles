@@ -30,9 +30,11 @@ end
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'clangd', 'lua_ls', 'omnisharp', 'rust_analyzer', 'zls' },
+    ensure_installed = { 'clangd', 'lua_ls', 'omnisharp', 'rust_analyzer' },
     handlers = {default_setup}
 })
+
+lsp_config.zls.setup({})
 
 local cmp = require('cmp')
 cmp.setup({
