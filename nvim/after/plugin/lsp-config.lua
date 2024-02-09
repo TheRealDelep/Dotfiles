@@ -30,7 +30,7 @@ end
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'clangd', 'lua_ls', 'omnisharp', 'rust_analyzer' },
+    ensure_installed = { 'clangd', 'haxe_language_server','lua_ls', 'omnisharp', 'rust_analyzer' },
     handlers = {default_setup}
 })
 

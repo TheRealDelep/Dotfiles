@@ -257,5 +257,8 @@ source "$HOME/.dotfiles/fzf/shell/key-bindings.bash"
 
 export XDG_CONFIG_HOME="$HOME/.dotfiles"
 export CXX=clang++-17
-export PATH=$PATH:"$HOME/repos/zig/build/bin"
+export PATH=$PATH:"$HOME/repos/zig/build/stage3/bin"
 export PATH=$PATH:"$HOME/repos/zls/zig-out/bin"
+export PATH=$PATH:"$HOME/.dotnet"
+alias godot="$HOME/repos/godot/bin/godot.linuxbsd.editor.x86_64.mono"
+. "$HOME/.cargo/env"

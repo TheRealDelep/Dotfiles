@@ -28,6 +28,7 @@ require('rose-pine').setup({
 
         -- Treesitter 
         ['@variable'] = {link = 'Normal'},
+        ['@punctuation'] = {link = 'Normal'},
         ['@parameter'] = {link = '@variable'},
         ['@field'] = {link = '@variable'},
         ['@property'] = {link = '@field'},
@@ -48,7 +49,6 @@ require('rose-pine').setup({
         ['@variable.builtin.zig'] = {link = '@variable'},
         ['@constant.builtin.zig'] = {link = '@variable'},
         ['@lsp.type.keywordliteral.zig'] = {link = 'Keyword'},
-
     }
 })
 

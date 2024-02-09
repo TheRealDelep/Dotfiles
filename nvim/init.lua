@@ -1,4 +1,3 @@
-
 local opt = vim.opt
 opt.nu = true
 opt.relativenumber = true
@@ -23,3 +22,9 @@ require('config')
 --vim.cmd('SymbolsOutline')
 
 opt.termguicolors = true
+
+vim.filetype.add({
+    extension = {
+        hx = 'haxe'
+    }
+})
