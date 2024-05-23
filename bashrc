@@ -124,7 +124,7 @@ export OSH=~/.dotfiles/oh-my-bash
 OSH_THEME="bakke"
 
 # Uncomment the following line to use case-sensitive completion.
-# OMB_CASE_SENSITIVE="true"
+OMB_CASE_SENSITIVE="false"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -256,9 +256,9 @@ source "$HOME/.dotfiles/fzf/shell/completion.bash"
 source "$HOME/.dotfiles/fzf/shell/key-bindings.bash"
 
 export XDG_CONFIG_HOME="$HOME/.dotfiles"
-export CXX=clang++-17
-export PATH=$PATH:"$HOME/repos/zig/build/stage3/bin"
-export PATH=$PATH:"$HOME/repos/zls/zig-out/bin"
-export PATH=$PATH:"$HOME/.dotnet"
-alias godot="$HOME/repos/godot/bin/godot.linuxbsd.editor.x86_64.mono"
-. "$HOME/.cargo/env"
+export CXX=g++
+export CC=gcc
+#export PATH=$PATH:"$HOME/repos/zig/build/stage3/bin"
+#export PATH=$PATH:"$HOME/repos/zls/zig-out/bin"
+#alias godot="$HOME/repos/godot/bin/godot.linuxbsd.editor.x86_64.mono"
+#. "$HOME/.cargo/env"
