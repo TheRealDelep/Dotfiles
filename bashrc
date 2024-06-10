@@ -262,3 +262,5 @@ export CC=gcc
 #export PATH=$PATH:"$HOME/repos/zls/zig-out/bin"
 #alias godot="$HOME/repos/godot/bin/godot.linuxbsd.editor.x86_64.mono"
 #. "$HOME/.cargo/env"
+export GODOT="/home/sylvain/.dotfiles/godotenv/godot/bin/godot"
+export PATH="/home/sylvain/.dotfiles/godotenv/godot/bin:$PATH"

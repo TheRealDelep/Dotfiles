@@ -8,19 +8,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local opts = { buffer = event.buf }
 
         vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<cr>')
-        vim.keymap.set('n', '<leader>def', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-        vim.keymap.set('n', '<leader>dec', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+        vim.keymap.set('n', '<leader>df', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+        vim.keymap.set('n', '<leader>dc', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
         vim.keymap.set('n', '<leader>imp', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
         vim.keymap.set('n', '<leader>typ', '<cmd>Lspsaga peek_type_definition<cr>', opts)
-        vim.keymap.set('n', '<leader>ref', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+        vim.keymap.set('n', '<leader>rf', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
         vim.keymap.set('n', '<leader>sig', '<cmd>lua vim.lsp.buf.signature()<cr>', opts)
-        vim.keymap.set('n', '<leader>ren', '<cmd>Lspsaga rename<cr>', opts)
+        vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<cr>', opts)
         vim.keymap.set('n', '<leader>fmt', '<cmd>lua vim.lsp.buf.format()<cr>', opts)
-        vim.keymap.set('n', '<leader>fix', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+        vim.keymap.set('n', '<leader>fx', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
-        vim.keymap.set('n', '<leader>dia', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
+        vim.keymap.set('n', '<leader>K', '<cmd>Lspsaga diagnostic_jump_next<cr>', opts)
+        vim.keymap.set('n', '<leader>dia', '<cmd>lua vim.diagnostic.open_float() <cr>', opts)
     end
 })
+
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false
+    }
+)
 
 local default_setup = function(server)
     lsp_config[server].setup({

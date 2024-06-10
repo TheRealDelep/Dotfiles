@@ -15,4 +15,5 @@
 
 - link:
     ~/.bashrc: bashrc 
+    ~/.alacritty.toml: alacritty.toml
 
