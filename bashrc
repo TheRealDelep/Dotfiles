@@ -256,11 +256,14 @@ source "$HOME/.dotfiles/fzf/shell/completion.bash"
 source "$HOME/.dotfiles/fzf/shell/key-bindings.bash"
 
 export XDG_CONFIG_HOME="$HOME/.dotfiles"
-export CXX=g++
-export CC=gcc
+export CXX=clang++
+export CC=clang
 #export PATH=$PATH:"$HOME/repos/zig/build/stage3/bin"
 #export PATH=$PATH:"$HOME/repos/zls/zig-out/bin"
 #alias godot="$HOME/repos/godot/bin/godot.linuxbsd.editor.x86_64.mono"
 #. "$HOME/.cargo/env"
 export GODOT="/home/sylvain/.dotfiles/godotenv/godot/bin/godot"
 export PATH="/home/sylvain/.dotfiles/godotenv/godot/bin:$PATH"
+export PATH="/usr/bin/odin:$PATH"
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/bin/odin/vendor/glfw/lib

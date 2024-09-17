@@ -1,6 +1,8 @@
 require('lspsaga').setup({})
 local lsp_config = require('lspconfig')
+local util = require('lspconfig/util')
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+local on_attach = require('cmp_nvim_lsp').on_attach
 
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
@@ -37,11 +39,17 @@ end
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'clangd','lua_ls', 'omnisharp', 'rust_analyzer' },
+    ensure_installed = { 'clangd','lua_ls', 'omnisharp', 'rust_analyzer', 'gopls', 'zls', 'ols' },
     handlers = {default_setup}
 })
 
-lsp_config.zls.setup({})
+lsp_config.zls.setup({
+    on_attach = on_attach,
+    capabilities = lsp_capabilities,
+    cmd = {"/home/sylvain/repos/zls/zig-out/bin/zls"},
+    filetypes = {"zig", "zon"},
+    root_dir = util.root_pattern("zls.json", "build.zig", ".git")
+})
 
 local cmp = require('cmp')
 cmp.setup({
